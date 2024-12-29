@@ -176,7 +176,7 @@ Func AutorunAwakened()
 	If Not FileExists($sIniFile) Or IniRead($sIniFile, "AwakenedPath", "ExePath", "") = "" Then
 		Local $iResponse = MsgBox($MB_YESNO, "Auto Start Awakened POE Trade", "Do you want me to start Awakened PoE Trade automatically when the script is executed?")
 		If $iResponse = $IDYES Then
-			`Local $sFile = FileOpenDialog("Choose Awakened PoE Trade.exe", "C:\Users\" & $sUserName & "\AppData\Local\Programs\Exiled Exchange 2", "Exiled Exchange 2.exe (*.exe)", $FD_FILEMUSTEXIST)`
+			Local $sFile = FileOpenDialog("Choose Awakened PoE Trade.exe", "C:\Users\" & $sUserName & "\AppData\Local\Programs\Exiled Exchange 2", "Exiled Exchange 2.exe (*.exe)", $FD_FILEMUSTEXIST)
 			If @error Then
 				MsgBox($MB_SYSTEMMODAL, "Cancel", "You will be reasked on next script start")
 			Else
